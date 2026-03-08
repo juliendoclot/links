@@ -148,7 +148,7 @@
 
     .name-text {
       font-family: 'Oswald', sans-serif;
-      font-size: 36px;
+      font-size: clamp(28px, 6vw, 36px);
       font-weight: 700;
       color: #FFFFFF;
       line-height: 1;
@@ -210,7 +210,7 @@
     .link-card .link-icon-teal { color: #00D4AA; }
 
     .link-text {
-      font-size: 13px;
+      font-size: clamp(11px, 2.8vw, 13px);
       font-weight: 600;
       color: #FFFFFF;
       flex: 1;
@@ -271,6 +271,37 @@
       }
       .corner-id, .version {
         display: none;
+      }
+      .avatar-wrap {
+        width: 76px;
+        height: 76px;
+      }
+    }
+
+    /* Very small phones */
+    @media (max-width: 380px) {
+      .profile-section {
+        padding: 20px 16px 0 16px;
+      }
+      .links-section {
+        padding: 16px 16px;
+      }
+      .footer-section {
+        padding: 0 16px 24px 16px;
+      }
+      .link-card {
+        padding: 12px 14px;
+      }
+      .avatar-wrap {
+        width: 68px;
+        height: 68px;
+      }
+    }
+
+    /* Touch devices: disable hover transform */
+    @media (hover: none) {
+      .link-card:hover {
+        transform: none;
       }
     }
   </style>
