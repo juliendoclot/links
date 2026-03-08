@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Julien Doclot</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,7 @@
       overflow-x: hidden;
       position: relative;
       font-family: 'JetBrains Mono', monospace;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 
     /* Subtle gradient glows */
@@ -215,6 +216,7 @@
       color: #FFFFFF;
       flex: 1;
       text-align: center;
+      overflow-wrap: break-word;
     }
 
     .link-arrow {
@@ -247,6 +249,10 @@
       color: #777777;
       transition: color 0.2s ease;
       display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
     }
 
     .socials a:hover {
@@ -260,14 +266,19 @@
 
     /* Mobile responsive */
     @media (max-width: 540px) {
+      body {
+        padding: 16px 0;
+      }
       .profile-section {
-        padding: 24px 24px 0 24px;
+        padding: 20px 24px 0 24px;
+        gap: 12px;
       }
       .links-section {
-        padding: 20px 24px;
+        padding: 16px 24px;
       }
       .footer-section {
-        padding: 0 24px 32px 24px;
+        padding: 0 24px 28px 24px;
+        gap: 16px;
       }
       .corner-id, .version {
         display: none;
@@ -275,6 +286,9 @@
       .avatar-wrap {
         width: 76px;
         height: 76px;
+      }
+      .socials {
+        gap: 8px;
       }
     }
 
