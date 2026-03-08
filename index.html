@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JULIEN | Blueprint Links</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #1A1A1A;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      position: relative;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Subtle gradient glows */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -100px;
+      left: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 107, 53, 0.031) 0%, rgba(255, 107, 53, 0) 100%);
+      pointer-events: none;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -50px;
+      right: -50px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 212, 170, 0.024) 0%, rgba(0, 212, 170, 0) 100%);
+      pointer-events: none;
+    }
+
+    /* Corner elements */
+    .corner-id {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      font-size: 9px;
+      color: #3D3D3D;
+      letter-spacing: 1px;
+    }
+
+    .version {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      font-size: 9px;
+      color: #3D3D3D;
+    }
+
+    /* Blueprint Card */
+    .card {
+      background: #212121;
+      border-radius: 16px;
+      width: 500px;
+      max-width: calc(100vw - 32px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: #2D2D2D;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      flex-shrink: 0;
+    }
+
+    .bar-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #FF5F57; }
+    .dot-yellow { background: #FEBC2E; }
+    .dot-green { background: #28C840; }
+
+    .bar-title {
+      font-size: 11px;
+      color: #777777;
+    }
+
+    .bar-spacer {
+      width: 46px;
+    }
+
+    /* Profile Section */
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 32px 44px 0 44px;
+    }
+
+    .avatar-wrap {
+      width: 90px;
+      height: 90px;
+      border-radius: 16px;
+      border: 2px solid #FF6B35;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sys-comment {
+      font-size: 9px;
+      color: #777777;
+    }
+
+    .name-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: #777777;
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #2D2D2D;
+      border-radius: 16px;
+      padding: 6px 14px;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background: #00D4AA;
+    }
+
+    .status-txt {
+      font-size: 11px;
+      font-weight: 600;
+      color: #00D4AA;
+    }
+
+    /* Links Section */
+    .links-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 24px 44px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #2D2D2D;
+      border-radius: 16px;
+      padding: 14px 18px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+      cursor: pointer;
+    }
+
+    .link-card:hover {
+      background: #353535;
+      transform: translateY(-1px);
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .link-card .link-icon-orange { color: #FF6B35; }
+    .link-card .link-icon-teal { color: #00D4AA; }
+
+    .link-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .link-arrow {
+      color: #777777;
+    }
+
+    /* Footer Section */
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 0 44px 44px 44px;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: #2D2D2D;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .socials a {
+      color: #777777;
+      transition: color 0.2s ease;
+      display: flex;
+    }
+
+    .socials a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-text {
+      font-size: 9px;
+      color: #3D3D3D;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 540px) {
+      .profile-section {
+        padding: 24px 24px 0 24px;
+      }
+      .links-section {
+        padding: 20px 24px;
+      }
+      .footer-section {
+        padding: 0 24px 32px 24px;
+      }
+      .corner-id, .version {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <span class="corner-id">003.BLUEPRINT</span>
+  <span class="version">// v3.1.0</span>
+
+  <div class="card">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="bar-left">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+      </div>
+      <span class="bar-title">profile.config</span>
+      <div class="bar-spacer"></div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <div class="avatar-wrap">
+        <img src="https://api.dicebear.com/9.x/glass/svg?seed=julien&backgroundColor=FF6B35,1A1A1A" alt="JULIEN avatar">
+      </div>
+      <span class="sys-comment">// user_profile</span>
+      <span class="name-text">JULIEN</span>
+      <span class="tagline">chief_vibe_officer</span>
+      <div class="status-row">
+        <div class="status-dot"></div>
+        <span class="status-txt">online</span>
+      </div>
+    </div>
+
+    <!-- Links Section -->
+    <div class="links-section">
+      <a class="link-card" href="https://revolut.com" target="_blank" rel="noopener">
+        <div class="link-left">
+          <i data-lucide="credit-card" class="link-icon-orange" style="width:16px;height:16px;"></i>
+          <span class="link-text">revolut</span>
+        </div>
+        <i data-lucide="arrow-up-right" class="link-arrow" style="width:14px;height:14px;"></i>
+      </a>
+      <a class="link-card" href="https://amazon.com" target="_blank" rel="noopener">
+        <div class="link-left">
+          <i data-lucide="shopping-cart" class="link-icon-orange" style="width:16px;height:16px;"></i>
+          <span class="link-text">amazon</span>
+        </div>
+        <i data-lucide="arrow-up-right" class="link-arrow" style="width:14px;height:14px;"></i>
+      </a>
+      <a class="link-card" href="https://tesla.com" target="_blank" rel="noopener">
+        <div class="link-left">
+          <i data-lucide="car" class="link-icon-teal" style="width:16px;height:16px;"></i>
+          <span class="link-text">tesla</span>
+        </div>
+        <i data-lucide="arrow-up-right" class="link-arrow" style="width:14px;height:14px;"></i>
+      </a>
+      <a class="link-card" href="#" target="_blank" rel="noopener">
+        <div class="link-left">
+          <i data-lucide="zap" class="link-icon-teal" style="width:16px;height:16px;"></i>
+          <span class="link-text">octopus_electroverse</span>
+        </div>
+        <i data-lucide="arrow-up-right" class="link-arrow" style="width:14px;height:14px;"></i>
+      </a>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-section">
+      <div class="divider"></div>
+      <div class="socials">
+        <a href="https://github.com" target="_blank" rel="noopener"><i data-lucide="github" style="width:18px;height:18px;"></i></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener"><i data-lucide="twitter" style="width:18px;height:18px;"></i></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener"><i data-lucide="linkedin" style="width:18px;height:18px;"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
+        <a href="mailto:hello@julien.dev"><i data-lucide="mail" style="width:18px;height:18px;"></i></a>
+      </div>
+      <span class="footer-text">// made in Belgium 🇧🇪</span>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
