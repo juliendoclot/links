@@ -205,12 +205,6 @@
       transform: translateY(-1px);
     }
 
-    .link-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
     .link-card .link-icon-orange { color: #FF6B35; }
     .link-card .link-icon-teal { color: #00D4AA; }
 
@@ -218,6 +212,8 @@
       font-size: 13px;
       font-weight: 600;
       color: #FFFFFF;
+      flex: 1;
+      text-align: center;
     }
 
     .link-arrow {
@@ -311,31 +307,23 @@
     <!-- Links Section -->
     <div class="links-section">
       <a class="link-card" href="https://revolut.com" target="_blank" rel="noopener">
-        <div class="link-left">
-          <i data-lucide="credit-card" class="link-icon-orange" style="width:16px;height:16px;"></i>
-          <span class="link-text">revolut</span>
-        </div>
+        <i data-lucide="credit-card" class="link-icon-orange" style="width:16px;height:16px;"></i>
+        <span class="link-text">revolut</span>
         <i data-lucide="arrow-up-right" class="link-arrow" style="width:14px;height:14px;"></i>
       </a>
       <a class="link-card" href="https://amazon.com" target="_blank" rel="noopener">
-        <div class="link-left">
-          <i data-lucide="shopping-cart" class="link-icon-orange" style="width:16px;height:16px;"></i>
-          <span class="link-text">amazon</span>
-        </div>
+        <i data-lucide="shopping-cart" class="link-icon-orange" style="width:16px;height:16px;"></i>
+        <span class="link-text">amazon</span>
         <i data-lucide="arrow-up-right" class="link-arrow" style="width:14px;height:14px;"></i>
       </a>
       <a class="link-card" href="https://tesla.com" target="_blank" rel="noopener">
-        <div class="link-left">
-          <i data-lucide="car" class="link-icon-teal" style="width:16px;height:16px;"></i>
-          <span class="link-text">tesla</span>
-        </div>
+        <i data-lucide="car" class="link-icon-teal" style="width:16px;height:16px;"></i>
+        <span class="link-text">tesla</span>
         <i data-lucide="arrow-up-right" class="link-arrow" style="width:14px;height:14px;"></i>
       </a>
       <a class="link-card" href="#" target="_blank" rel="noopener">
-        <div class="link-left">
-          <i data-lucide="zap" class="link-icon-teal" style="width:16px;height:16px;"></i>
-          <span class="link-text">octopus_electroverse</span>
-        </div>
+        <i data-lucide="zap" class="link-icon-teal" style="width:16px;height:16px;"></i>
+        <span class="link-text">octopus_electroverse</span>
         <i data-lucide="arrow-up-right" class="link-arrow" style="width:14px;height:14px;"></i>
       </a>
     </div>
