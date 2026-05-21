@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Tous les liens utiles de Julien Doclot, blog tech, domotique, IA, Tesla et fintech.">
+  <meta name="description" content="Les principaux liens de Julien Doclot, blog tech, domotique, IA, Tesla et fintech.">
   <title>Mes liens | Julien Doclot</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -188,15 +188,15 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 92px minmax(0, 1fr);
-      gap: clamp(18px, 4vw, 30px);
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: clamp(16px, 3.2vw, 28px);
       align-items: center;
-      margin-bottom: clamp(20px, 4vw, 34px);
+      margin-bottom: clamp(18px, 3.4vw, 30px);
     }
 
     .avatar-link {
-      width: 92px;
-      height: 92px;
+      width: 96px;
+      height: 96px;
       border-radius: 28px;
       border: 1px solid color-mix(in oklab, var(--color-primary) 40%, var(--color-border));
       background: var(--color-primary-light);
@@ -218,39 +218,15 @@
       display: block;
     }
 
-    .section-pill {
-      width: fit-content;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      color: var(--color-primary-dark);
-      background: var(--color-primary-light);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .pulse-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--color-primary-dark);
-      animation: jd-edito-pulse 2.4s cubic-bezier(.4, 0, .6, 1) infinite;
-    }
-
     h1 {
       max-width: 760px;
       color: var(--color-text-dark);
       font-family: Outfit, Inter, sans-serif;
-      font-size: clamp(46px, 9vw, 88px);
+      font-size: clamp(42px, 7.4vw, 78px);
       font-weight: 900;
       line-height: 0.9;
       letter-spacing: -0.07em;
-      text-wrap: balance;
+      white-space: nowrap;
     }
 
     .accent {
@@ -260,7 +236,7 @@
 
     .hero-copy {
       max-width: 640px;
-      margin-top: 14px;
+      margin-top: 10px;
       color: var(--color-text-gray);
       font-size: clamp(15px, 2vw, 18px);
       line-height: 1.55;
@@ -434,21 +410,6 @@
       flex-wrap: wrap;
     }
 
-    .signature {
-      color: var(--color-primary-dark);
-      font-family: Outfit, Inter, sans-serif;
-      font-size: 20px;
-      font-style: italic;
-      font-weight: 900;
-      letter-spacing: -0.045em;
-    }
-
-    .footer-text {
-      margin-top: 4px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
     .socials {
       display: flex;
       align-items: center;
@@ -475,6 +436,27 @@
       transform: translateY(-2px);
     }
 
+    .brand-icon {
+      width: 18px;
+      height: 18px;
+      display: block;
+      fill: currentColor;
+    }
+
+    .linkedin-icon {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .linkedin-icon .mark {
+      fill: currentColor;
+    }
+
+    .linkedin-icon .cutout {
+      fill: var(--color-page);
+    }
+
     .sr-only {
       position: absolute;
       width: 1px;
@@ -485,17 +467,6 @@
       clip: rect(0, 0, 0, 0);
       white-space: nowrap;
       border: 0;
-    }
-
-    @keyframes jd-edito-pulse {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.55;
-        transform: scale(0.82);
-      }
     }
 
     @media (max-width: 720px) {
@@ -518,18 +489,18 @@
       }
 
       .hero {
-        grid-template-columns: 76px minmax(0, 1fr);
-        gap: 14px;
-        align-items: start;
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
       }
 
       .hero-content {
-        display: contents;
+        min-width: 0;
       }
 
       .avatar-link {
-        width: 76px;
-        height: 76px;
+        width: 72px;
+        height: 72px;
         border-radius: 22px;
       }
 
@@ -537,20 +508,13 @@
         border-radius: 17px;
       }
 
-      .section-pill {
-        margin-bottom: 8px;
-      }
-
       h1 {
-        grid-column: 1 / -1;
-        font-size: clamp(34px, 11.8vw, 50px);
-        letter-spacing: -0.065em;
-        white-space: nowrap;
+        font-size: min(34px, calc((100vw - 120px) / 9.3));
+        letter-spacing: -0.07em;
       }
 
       .hero-copy {
-        grid-column: 1 / -1;
-        margin-top: 8px;
+        margin-top: 5px;
         font-size: 15px;
         line-height: 1.5;
       }
@@ -583,6 +547,26 @@
     @media (max-width: 380px) {
       .page {
         padding: 14px;
+      }
+
+      .hero {
+        grid-template-columns: 64px minmax(0, 1fr);
+        gap: 10px;
+      }
+
+      .avatar-link {
+        width: 64px;
+        height: 64px;
+        border-radius: 20px;
+        padding: 5px;
+      }
+
+      .avatar-link img {
+        border-radius: 16px;
+      }
+
+      h1 {
+        font-size: min(28px, calc((100vw - 104px) / 9.3));
       }
 
       .link-card,
@@ -643,13 +627,9 @@
         </a>
 
         <div class="hero-content">
-          <div class="section-pill">
-            <span class="pulse-dot"></span>
-            Liens utiles
-          </div>
           <h1 id="page-title">Julien <span class="accent">Doclot.</span></h1>
           <p class="hero-copy">
-            Tech, domotique, réseau, IA et Tesla. Voici mes liens principaux, les parrainages et les endroits où me suivre.
+            Blog, parrainages et réseaux.
           </p>
         </div>
       </section>
@@ -744,23 +724,27 @@
     <footer class="footer">
       <div class="footer-line"></div>
       <div class="footer-content">
-        <div>
-          <p class="signature">Mes obsessions tech.</p>
-          <p class="footer-text">Fait en Belgique.</p>
-        </div>
-
         <nav class="socials" aria-label="Réseaux sociaux">
           <a href="https://github.com/juliendoclot" target="_blank" rel="noopener" aria-label="GitHub">
-            <i data-lucide="code-2" aria-hidden="true" style="width:18px;height:18px;"></i>
+            <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+            </svg>
           </a>
           <a href="https://x.com/juliendoclot" target="_blank" rel="noopener" aria-label="X">
-            <i data-lucide="message-circle" aria-hidden="true" style="width:18px;height:18px;"></i>
+            <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"></path>
+            </svg>
           </a>
           <a href="https://www.linkedin.com/in/juliendoclot/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <i data-lucide="briefcase-business" aria-hidden="true" style="width:18px;height:18px;"></i>
+            <svg class="linkedin-icon" viewBox="0 0 72 72" aria-hidden="true" focusable="false">
+              <path class="mark" d="M8 72h56c4.418 0 8-3.582 8-8V8c0-4.418-3.582-8-8-8H8C3.582 0 0 3.582 0 8v56c0 4.418 3.582 8 8 8Z"></path>
+              <path class="cutout" d="M62 62H51.316V43.802c0-4.989-1.896-7.777-5.845-7.777-4.296 0-6.541 2.901-6.541 7.777V62H28.633V27.333H38.93v4.67s3.096-5.729 10.453-5.729C56.736 26.274 62 30.764 62 40.051V62ZM16.349 22.794c-3.507 0-6.349-2.864-6.349-6.397S12.842 10 16.349 10s6.348 2.864 6.348 6.397-2.84 6.397-6.348 6.397ZM11.033 62h10.736V27.333H11.033V62Z"></path>
+            </svg>
           </a>
           <a href="https://www.instagram.com/juliendoclot" target="_blank" rel="noopener" aria-label="Instagram">
-            <i data-lucide="camera" aria-hidden="true" style="width:18px;height:18px;"></i>
+            <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M7.03.084C5.753.144 4.881.348 4.119.647c-.789.308-1.458.72-2.123 1.388C1.331 2.703.921 3.372.616 4.162.321 4.926.121 5.799.064 7.077c-.056 1.277-.069 1.688-.063 4.947.006 3.259.021 3.667.083 4.947.061 1.277.264 2.148.563 2.911.308.789.72 1.457 1.388 2.123.668.665 1.337 1.074 2.129 1.38.763.295 1.636.496 2.913.552 1.277.056 1.688.069 4.946.063 3.258-.006 3.668-.021 4.948-.081 1.28-.061 2.147-.266 2.91-.564.789-.309 1.458-.72 2.123-1.388.665-.668 1.074-1.338 1.38-2.128.295-.763.496-1.636.551-2.912.056-1.281.07-1.69.063-4.948-.006-3.258-.021-3.667-.081-4.946-.061-1.28-.264-2.149-.564-2.912-.308-.789-.72-1.457-1.388-2.123C21.298 1.33 20.628.921 19.838.617 19.074.321 18.202.12 16.924.065 15.647.009 15.236-.005 11.977.001 8.718.008 8.31.022 7.03.084Zm.14 21.693c-1.17-.051-1.805-.245-2.229-.408-.56-.216-.96-.477-1.382-.895-.422-.418-.681-.819-.9-1.378-.164-.424-.362-1.058-.417-2.228-.059-1.265-.072-1.644-.079-4.848-.007-3.204.005-3.583.061-4.848.05-1.169.245-1.805.408-2.228.216-.561.476-.96.895-1.382.419-.422.818-.681 1.378-.9.423-.165 1.058-.362 2.227-.417 1.266-.06 1.645-.072 4.848-.079 3.203-.007 3.584.005 4.85.061 1.169.05 1.805.244 2.228.408.561.216.96.475 1.382.895.422.419.682.818.901 1.379.165.421.362 1.056.417 2.226.06 1.266.074 1.645.08 4.848.005 3.203-.006 3.583-.061 4.848-.051 1.17-.245 1.806-.408 2.23-.216.56-.477.96-.896 1.381-.419.422-.818.681-1.378.9-.423.165-1.058.362-2.226.417-1.266.06-1.645.072-4.85.079-3.204.007-3.582-.006-4.848-.061ZM16.953 5.586a1.44 1.44 0 1 0 2.877-.004 1.44 1.44 0 0 0-2.877.004ZM5.839 12.012c.007 3.403 2.77 6.156 6.173 6.15 3.403-.007 6.157-2.771 6.15-6.174-.006-3.403-2.77-6.156-6.174-6.15-3.403.007-6.156 2.771-6.149 6.174ZM8 12.008a4 4 0 1 1 4.008 3.992A4 4 0 0 1 8 12.008Z"></path>
+            </svg>
           </a>
           <a href="mailto:hello@doclot.io" aria-label="Email">
             <i data-lucide="mail" aria-hidden="true" style="width:18px;height:18px;"></i>
